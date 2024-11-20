@@ -9,12 +9,15 @@
 </head>
 <body>
     <main>
-        <div id="login">
-            
+        <div id="login-box">
+            <p>Your name: </p>
+            <input type="text" id="username">
+            <button id="login-submit">Login</button>
         </div>
+        
         <!-- actual body of website -->
         <h1>Welcome to the Magic 8 Ball!</h1>
-        <p>Currently logged in as: <span id="username"></span></p> <!-- TODO: put the user name that they input here -->
+        <p>Currently logged in as: <span id="login-display"></span></p> <!-- TODO: put the user name that they input here -->
         <p>Ask a yes or no question:</p>
         <textarea id="question"></textarea>
         <button id="submit-button">Submit</button>
