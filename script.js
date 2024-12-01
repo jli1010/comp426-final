@@ -1,10 +1,24 @@
 let username = '';
 
+window.addEventListener('load', () => {
+    const savedColor = localStorage.getItem('backgroundColor');
+    if (savedColor) {
+        document.body.style.backgroundColor = savedColor;
+    }
+});
+
+document.getElementById('color-picker').addEventListener('input', (event) => {
+    const selectedColor = event.target.value;
+    document.body.style.backgroundColor = selectedColor;
+    localStorage.setItem('backgroundColor', selectedColor);
+});
+
 document.getElementById('login-submit').addEventListener('click', () => {
     username = document.getElementById('username').value;
     document.getElementById('login-box').remove();
     document.getElementById('login-display').innerHTML = username;
-})
+});
+
 
 const submit_button = document.getElementById("submit-button");
 
