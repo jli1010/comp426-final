@@ -9,11 +9,40 @@ document.getElementById('login-submit').addEventListener('click', () => {
 const submit_button = document.getElementById("submit-button");
 
 submit_button.addEventListener('click', async (e) => {
-    let input = document.getElementById('question').innerHTML;
+    let input = document.getElementById('question').value;
+    console.log(input);
     let response = await fetch(`http://localhost:3000/eight_ball`);
     let result = await response.json();
     let output = document.getElementsByClassName('response')[0];
     output.innerHTML = result.answer;
-    let gif_img = document.getElementById('image_response');
-    gif_img.src = result.image;
-})
+
+    if (input == null) {
+        output.innerHTML = "Please enter a question.";
+        return;
+    }
+
+    try {
+        const post = await fetch('http://localhost:3000/questions', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ question: input, answer: result.answer }),
+        });
+
+        if (!post.ok) {
+            const errorData = await post.json();
+            output.innerHTML = `Error: ${errorData.message}`;
+            return;
+        }
+
+        const questionData = await post.json();
+
+        output.innerHTML = `Q: ${questionData.question} <br> A: ${questionData.answer}`;
+        let gif_img = document.getElementById('image_response');
+        gif_img.src = result.image;
+    } catch (error) {
+        console.error('Error interacting with the questions API:', error);
+        output.innerHTML = "Failed to submit your question.";
+    }
+});
