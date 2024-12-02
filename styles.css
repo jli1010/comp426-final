@@ -50,7 +50,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 10px 10px 10px 2px #56135c;
+    box-shadow: 10px 10px 30px 2px rgba(50, 50, 50);
 }
 
 #ball-white {
@@ -78,7 +78,7 @@ h2 {
     padding-left: 2%;
     padding-right: 2%;
     border-radius: 10px;
-    box-shadow: 5px 5px 5px #56135c;
+    box-shadow: 5px 5px 5px rgba(50, 50, 50);
     margin-bottom: 2%;
     background-color: #ffffff;
     text-align: center;
