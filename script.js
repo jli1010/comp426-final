@@ -1,5 +1,3 @@
-let username = '';
-
 window.addEventListener('load', () => {
     const savedColor = localStorage.getItem('backgroundColor');
     if (savedColor) {
@@ -13,18 +11,11 @@ document.getElementById('color-picker').addEventListener('input', (event) => {
     localStorage.setItem('backgroundColor', selectedColor);
 });
 
-document.getElementById('login-submit').addEventListener('click', () => {
-    username = document.getElementById('username').value;
-    document.getElementById('login-box').remove();
-    document.getElementById('login-display').innerHTML = username;
-});
-
 
 const submit_button = document.getElementById("submit-button");
 
 submit_button.addEventListener('click', async (e) => {
     let input = document.getElementById('question').value;
-    console.log(input);
     let response = await fetch(`http://localhost:3000/eight_ball`);
     let result = await response.json();
     let output = document.getElementsByClassName('response')[0];
@@ -52,7 +43,7 @@ submit_button.addEventListener('click', async (e) => {
 
         const questionData = await post.json();
 
-        output.innerHTML = `Q: ${questionData.question} <br> A: ${questionData.answer}`;
+        output.innerHTML = `Question: ${questionData.question} <br> 8 ball's response: ${questionData.answer}`;
         let gif_img = document.getElementById('image_response');
         gif_img.src = result.image;
     } catch (error) {

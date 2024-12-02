@@ -13,15 +13,9 @@
             <p>choose background color:</p>
             <input type="color" id="color-picker" value="#ffffff" />
         </div>
-        <div id="login-box">
-            <p>Your name: </p>
-            <input type="text" id="username">
-            <button id="login-submit">Login</button>
-        </div>
         
         <!-- actual body of website -->
         <h1>Welcome to the Magic 8 Ball!</h1>
-        <p>Currently logged in as: <span id="login-display"></span></p> <!-- TODO: put the user name that they input here -->
         <p>Ask a yes or no question:</p>
         <textarea id="question"></textarea>
         <button id="submit-button">Submit</button>
@@ -31,12 +25,10 @@
         </div>
 
         <div id="previous-responses">
-            <h2>Your previous questions</h2>
+            <h2>Previous Question</h2>
 
-            <!-- just a demo placeholder, feel free to delete once you get it all hooked up -->
             <div class="question-card">
-                <p>Your question: <span class="user-question">poiquwr ;alksdjf ;lkjasf as;dlfj qpwoieur mncxv paoisuf qpoirwu</span></p>
-                <p>8 Ball's response: <span class="response">;lkajsdf oqipweur nxczv; aweroiz xczvkj</span><img id="image_response"></p>
+                <p><span class="response"></span><img id="image_response"></p>
             </div>
             
         </div>
