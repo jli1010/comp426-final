@@ -87,3 +87,25 @@ h2 {
 #image_response{
     margin-top: 20px;
 }
+
+#triangle {
+    position: relative;
+}
+
+#blue_triangle {
+    /* position: absolute;
+    left: 50%; */
+    width: 250px;
+    height: 250px;
+    padding-top: 50%;
+}
+
+#ball_answer {
+    position: absolute; 
+    top: 45%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    margin: 0;
+    color: white;
+    font-size: 50px;
+}

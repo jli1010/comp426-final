@@ -46,6 +46,10 @@ submit_button.addEventListener('click', async (e) => {
         output.innerHTML = `Question: ${questionData.question} <br> 8 ball's response: ${questionData.answer}`;
         let gif_img = document.getElementById('image_response');
         gif_img.src = result.image;
+
+        let ballInside = document.getElementById('ball-white');
+        ballInside.innerHTML = `<div id="triangle"><img id="blue_triangle" src="blue_triangle.png"><p id="ball_answer">${questionData.answer}</p></div>`;
+        
     } catch (error) {
         console.error('Error interacting with the questions API:', error);
         output.innerHTML = "Failed to submit your question.";
