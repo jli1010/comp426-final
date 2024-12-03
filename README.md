@@ -4,4 +4,4 @@ Our website is a magic 8 ball website. On the frontend, users can ask a question
 
 Additionally, users can pick the background color of the website using the color picker at the top. This is session-persistent, so the chosen color stays when the screen is refreshed.
 
-Link: 
+Link: https://youtu.be/X3wdO4rETi4
